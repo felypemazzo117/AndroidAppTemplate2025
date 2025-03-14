@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.dashboard
+package com.felype.AndroidAppTemplate.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

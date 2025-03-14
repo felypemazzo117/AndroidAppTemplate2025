@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.login
+package com.felype.AndroidAppTemplate.ui.login
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.jailton.androidapptemplate.MainActivity
-import com.jailton.androidapptemplate.R
-import com.jailton.androidapptemplate.ui.usuario.CadastroUsuarioActivity
+import com.felype.AndroidAppTemplate.MainActivity
+import com.felype.AndroidAppTemplate.R
+import com.felype.AndroidAppTemplate.ui.usuario.CadastroUsuarioActivity
 
 class LoginActivity : AppCompatActivity() {
 

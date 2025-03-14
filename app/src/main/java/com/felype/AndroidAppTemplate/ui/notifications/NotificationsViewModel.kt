@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.notifications
+package com.felype.AndroidAppTemplate.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
