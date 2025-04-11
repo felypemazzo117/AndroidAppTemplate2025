@@ -62,7 +62,7 @@
 
     <EditText
         android:id="@+id/registerPasswordEditText"
-        android:layout_width="0dp"
+        android:layout_width="16dp"
         android:layout_height="wrap_content"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -72,7 +72,7 @@
 
     <EditText
         android:id="@+id/registerConfirmPasswordEditText"
-        android:layout_width="0dp"
+        android:layout_width="16dp"
         android:layout_height="wrap_content"
         android:hint="Confirmar Senha"
         android:inputType="textPassword"
