@@ -1,4 +1,4 @@
-package com.jailton.androidapptemplate.ui.usuario
+package com.felype.AndroidAppTemplate.ui.usuario
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.felype.AndroidAppTemplate.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -18,7 +19,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.jailton.androidapptemplate.baseclasses.Usuario
+import com.felype.AndroidAppTemplate.baseclasses.Usuario
+import com.bumptech.glide.Glide
 
 class PerfilUsuarioFragment : Fragment() {
 
@@ -42,13 +44,18 @@ class PerfilUsuarioFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val view = inflater.inflate(R.layout.fragment_perfil_usuario, container, false)
 
         // Inicializa o Firebase Auth
         auth = FirebaseAuth.getInstance()
-
+        userProfileImageView = view.findViewById(R.id.userProfileImageView)
         registerEnderecoEditText = view.findViewById(R.id.registerEnderecoEditText)
         registerPasswordEditText = view.findViewById(R.id.registerPasswordEditText)
         registerConfirmPasswordEditText = view.findViewById(R.id.registerConfirmPasswordEditText)
+        registerNameEditText = view.findViewById(R.id.registerNameEditText)
+        registerEmailEditText = view.findViewById(R.id.registerEmailEditText)
+        registerButton = view.findViewById(R.id.registerButton)
+        sairButton = view.findViewById(R.id.sairButton)
 
         try {
             usersReference = FirebaseDatabase.getInstance().getReference("users")
@@ -66,11 +73,15 @@ class PerfilUsuarioFragment : Fragment() {
             registerPasswordEditText.visibility = View.GONE
             registerConfirmPasswordEditText.visibility = View.GONE
             registerEmailEditText.isEnabled = false
+
+            user.photoUrl?.let { uri ->
+                Glide.with(requireContext())
+                    .load(uri)
+                    .into(userProfileImageView)
+            }
         }
 
-        user?.let {
-            // Exibe a foto do perfil usando a biblioteca Glide
-        }
+
 
         registerButton.setOnClickListener {
             updateUser()
@@ -150,7 +161,7 @@ class PerfilUsuarioFragment : Fragment() {
             .setDisplayName(displayName)
             .build()
 
-        val usuario = Usuario(user?.uid.toString() , displayName, user?.email, endereco, )
+        val usuario = Usuario(user?.uid.toString(), displayName, user?.email, endereco)
 
         user?.updateProfile(profileUpdates)
             ?.addOnCompleteListener { task ->
