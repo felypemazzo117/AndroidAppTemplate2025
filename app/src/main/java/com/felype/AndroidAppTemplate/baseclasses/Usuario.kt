@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 package com.felype.AndroidAppTemplate.baseclasses
+=======
+package com.felype.baseclasses
+>>>>>>> Stashed changes
 
 data class Usuario(
     var key: String? = null,
