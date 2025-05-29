@@ -2,15 +2,14 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
-    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
-    namespace = "com.felype.AndroidAppTemplate"
+    namespace = "com.jailton.androidapptemplate"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.felype.AndroidAppTemplate"
+        applicationId = "com.jailton.androidapptemplate"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -54,7 +53,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation (libs.glide)
-    kapt("com.github.bumptech.glide:compiler:4.16.0")
     implementation(libs.firebase.storage.ktx)
     implementation(libs.play.services.auth)
     testImplementation(libs.junit)

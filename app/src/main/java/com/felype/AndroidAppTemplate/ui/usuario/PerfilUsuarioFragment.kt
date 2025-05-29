@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 package com.felype.AndroidAppTemplate.ui.usuario
-=======
-package com.felype.androidapptemplate.ui.usuario
->>>>>>> Stashed changes
 
 import android.os.Bundle
 import android.util.Log
@@ -23,12 +19,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-<<<<<<< Updated upstream
 import com.felype.AndroidAppTemplate.baseclasses.Usuario
 import com.bumptech.glide.Glide
-=======
-import com.felype.baseclasses.Usuario
->>>>>>> Stashed changes
 
 class PerfilUsuarioFragment : Fragment() {
 
@@ -54,7 +46,6 @@ class PerfilUsuarioFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_perfil_usuario, container, false)
 
-        val view = inflater.inflate(R.layout.fragment_perfil_usuario, container, false)
 
         // Inicializa o Firebase Auth
         auth = FirebaseAuth.getInstance()
@@ -64,7 +55,8 @@ class PerfilUsuarioFragment : Fragment() {
         registerConfirmPasswordEditText = view.findViewById(R.id.registerConfirmPasswordEditText)
         registerNameEditText = view.findViewById(R.id.registerNameEditText)
         registerEmailEditText = view.findViewById(R.id.registerEmailEditText)
-        registerButton = view.findViewById(R.id.registerButton)
+
+        registerButton = view.findViewById(R.id.salvarButton)
         sairButton = view.findViewById(R.id.sairButton)
 
         try {
@@ -187,7 +179,6 @@ class PerfilUsuarioFragment : Fragment() {
     }
 
     private fun saveUserToDatabase(usuario: Usuario) {
-        // Cria uma chave única para a nova loja
         if (usuario.key != null) {
             usersReference.child(usuario.key.toString()).setValue(usuario)
                 .addOnSuccessListener {
