@@ -50,9 +50,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         // TODO: Substituir a logica aqui
         val targetProgress = when (status) {
-            "em preparo" -> 33
-            "saindo para entrega" -> 66
-            "entregue" -> 100
+            "Seu Produto Está Sendo Preparado" -> 33
+            "Seu Produto Saiu para a Entrega!" -> 66
+            "Seu Produto foi entregue!" -> 100
             else -> 0
         }
 
