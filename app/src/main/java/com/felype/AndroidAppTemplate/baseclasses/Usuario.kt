@@ -1,5 +1,6 @@
 package com.felype.AndroidAppTemplate.baseclasses
 
+
 data class Usuario(
     var key: String? = null,
     var nome: String? = null,
